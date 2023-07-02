@@ -37,8 +37,10 @@
     },
     "prettier": "@yutengjing/prettier-config",
     "lint-staged": {
-        "*.{ts,json,md}": "eslint --fix",
-        "*.{ts,json,md,yaml}": "prettier --write"
+        "*.{ts,json,md}": [
+            "eslint --fix",
+            "prettier --write"
+        ]
     },
     "simple-git-hooks": {
         "pre-commit": "npx lint-staged"
@@ -46,8 +48,10 @@
     "scripts": {
         "prepublishOnly": "pnpm run build",
         "clean": "rm -rf ./dist",
-        "test": "tsc --noEmit",
-        "build": "pnpm clean && tsc -p ."
+        "build": "pnpm clean && tsc -p .",
+        "type-check": "tsc --noEmit",
+        "lint": "eslint .",
+        "test": "pnpm lint && pnpm type-check"
     },
     "dependencies": {
         "@clack/prompts": "^0.6.3",

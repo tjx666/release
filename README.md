@@ -26,7 +26,7 @@ pnpm install -g @yutengjing/release
 release
 ```
 
-## Related Projects
+## Related
 
 - [changelogen](https://github.com/unjs/changelogen) generate changelog
 - [bumpp](https://github.com/antfu/bumpp) bump version

@@ -1,6 +1,6 @@
 {
     "name": "@yutengjing/release",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "A personal use release tool for generating changelog and bump.",
     "keywords": [
         "release",
@@ -23,6 +23,7 @@
     "files": [
         "dist"
     ],
+    "module": "commonjs",
     "bin": "./dist/index.js",
     "engines": {
         "node": ">=16.14.0"

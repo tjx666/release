@@ -2,6 +2,8 @@
 
 [![npm](https://img.shields.io/npm/v/@yutengjing/release.svg)](https://npmjs.com/package/@yutengjing/release) [![downloads](https://img.shields.io/npm/dw/@yutengjing/release)](https://npmjs.com/package/@yutengjing/release) [![test](https://github.com/tjx666/release/actions/workflows/test.yml/badge.svg)](https://github.com/tjx666/release/actions/workflows/test.yml)
 
+![effect](./images/effect.png)
+
 A personal use release tool for generating changelog and bump.
 
 this cli will do following things:

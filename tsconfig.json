@@ -1,0 +1,10 @@
+{
+    "extends": "@yutengjing/tsconfig-node/tsconfig.json",
+    "compilerOptions": {
+        "noEmit": false,
+        "module": "CommonJS",
+        "verbatimModuleSyntax": false,
+        "outDir": "./dist"
+    },
+    "include": ["src/*.ts"]
+}

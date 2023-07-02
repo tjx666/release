@@ -1,0 +1,69 @@
+{
+    "name": "@yutengjing/release",
+    "version": "0.0.0",
+    "description": "A personal use release tool for generating changelog and bump.",
+    "keywords": [
+        "release",
+        "bump",
+        "changelog",
+        "publish",
+        "sematic",
+        "version"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/tjx666/release#readme",
+    "bugs": {
+        "url": "https://github.com/tjx666/release/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tjx666/release.git"
+    },
+    "author": "YuTengjing <ytj2713151713@gmail.com>",
+    "files": [
+        "dist"
+    ],
+    "bin": "./dist/index.js",
+    "engines": {
+        "node": ">=16.14.0"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/",
+        "access": "public"
+    },
+    "eslintConfig": {
+        "extends": "@yutengjing/eslint-config-typescript"
+    },
+    "prettier": "@yutengjing/prettier-config",
+    "lint-staged": {
+        "*.{ts,json,md}": "eslint --fix",
+        "*.{ts,json,md,yaml}": "prettier --write"
+    },
+    "simple-git-hooks": {
+        "pre-commit": "npx lint-staged"
+    },
+    "scripts": {
+        "prepublishOnly": "pnpm run build",
+        "clean": "rm -rf ./dist",
+        "test": "tsc --noEmit",
+        "build": "pnpm clean && tsc -p ."
+    },
+    "dependencies": {
+        "@clack/prompts": "^0.6.3",
+        "bumpp": "^9.1.1",
+        "changelogen": "^0.5.3",
+        "execa": "^5.1.1",
+        "picocolors": "^1.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.3.3",
+        "@yutengjing/eslint-config-typescript": "^0.4.2",
+        "@yutengjing/prettier-config": "^0.0.1",
+        "@yutengjing/tsconfig-node": "^0.0.2",
+        "eslint": "^8.44.0",
+        "lint-staged": "^13.2.3",
+        "prettier": "^2.8.8",
+        "simple-git-hooks": "^2.8.1",
+        "typescript": "^5.1.6"
+    }
+}

@@ -52,7 +52,7 @@
         "type-check": "tsc --noEmit",
         "lint": "eslint .",
         "test": "pnpm lint && pnpm type-check",
-        "release": "pnpm test && npx @yutengjing/release"
+        "release": "pnpm test && npx @yutengjing/release && pnpm publish"
     },
     "dependencies": {
         "@clack/prompts": "^0.6.3",

@@ -1,11 +1,14 @@
 import fsp from 'node:fs/promises';
 import { resolve } from 'node:path';
 
-import { intro, outro, spinner, confirm } from '@clack/prompts';
+import { confirm, intro, outro, spinner } from '@clack/prompts';
+import boxen from 'boxen';
 import { versionBump } from 'bumpp';
 import { generateMarkDown, getGitDiff, loadChangelogConfig, parseCommits } from 'changelogen';
 import execa from 'execa';
 import c from 'picocolors';
+
+const cwd = process.cwd();
 
 function getDateStr() {
     const today = new Date();
@@ -23,7 +26,7 @@ function getDateStr() {
  * https://github.com/unjs/changelogen/blob/main/src/commands/default.ts
  */
 async function generateChangelog(newVersion: string) {
-    const config = await loadChangelogConfig(process.cwd(), {
+    const config = await loadChangelogConfig(cwd, {
         types: {
             feat: { title: '🚀 Features' },
             fix: { title: '🐞 Bug Fixes' },
@@ -69,6 +72,16 @@ async function gitPush() {
     await execa('git', ['push', '--tags']);
 }
 
+async function getRepository() {
+    const pkg = JSON.parse(await fsp.readFile(resolve(cwd, 'package.json'), 'utf8'));
+    const url = pkg.repository?.url;
+    if (typeof url === 'string') {
+        const regex = /^(?:git\+)?(https?:\/\/?\S+?)(?:\.git)?$/;
+        const match = regex.exec(url);
+        return match?.[1];
+    }
+}
+
 async function main() {
     intro(c.cyan(c.bold('Release New Version')));
     const s = spinner();
@@ -100,6 +113,22 @@ async function main() {
     }
 
     outro(`release ${c.green(`v${newVersion}`)} success!`);
+
+    const repository = await getRepository();
+    if (repository) {
+        const releaseUrl = c.green(`${repository}/releases/tag/v${newVersion}`);
+        const actionsUrl = c.green(`${repository}/actions`);
+        const more = `${c.magenta('Release:')} ${releaseUrl}
+${c.magenta('Actions:')} ${actionsUrl}`;
+        console.log(
+            boxen(more, {
+                padding: 1,
+                margin: 1,
+                borderColor: 'yellow',
+                borderStyle: 'round',
+            }),
+        );
+    }
 }
 
 main();

@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import { confirm, intro, outro, spinner } from '@clack/prompts';
 import boxen from 'boxen';
 import { versionBump } from 'bumpp';
+import type { ChangelogConfig } from 'changelogen';
 import { generateMarkDown, getGitDiff, loadChangelogConfig, parseCommits } from 'changelogen';
 import execa from 'execa';
 import c from 'picocolors';
@@ -26,16 +27,19 @@ function getDateStr() {
  * https://github.com/unjs/changelogen/blob/main/src/commands/default.ts
  */
 async function generateChangelog(newVersion: string) {
+    const types: ChangelogConfig['types'] = {
+        feat: { title: '🚀 Features' },
+        fix: { title: '🐞 Bug Fixes' },
+        perf: { title: '🏎 Performance' },
+    };
     const config = await loadChangelogConfig(cwd, {
-        types: {
-            feat: { title: '🚀 Features' },
-            fix: { title: '🐞 Bug Fixes' },
-            perf: { title: '🏎 Performance' },
-        },
+        types,
         newVersion: `${newVersion} (${getDateStr()})`,
     });
     const rawCommits = await getGitDiff(config.from, config.to);
-    const commits = parseCommits(rawCommits, config).filter((c) => config.types[c.type]);
+    const commits = parseCommits(rawCommits, config).filter(
+        (c) => config.types[c.type] && Object.keys(types).includes(c.type.toLowerCase()),
+    );
     const md = await generateMarkDown(commits, config);
     return md.replaceAll('\n\n\n', '\n\n').replaceAll('  - ', '- ');
 }

@@ -35,8 +35,8 @@ devDependencies:
     specifier: ^0.0.1
     version: 0.0.1(prettier@2.8.8)
   '@yutengjing/release':
-    specifier: ^0.0.1
-    version: 0.0.1
+    specifier: ^0.0.2
+    version: 0.0.2
   '@yutengjing/tsconfig-node':
     specifier: ^0.0.2
     version: 0.0.2(@types/node@20.3.3)
@@ -474,12 +474,13 @@ packages:
       prettier: 2.8.8
     dev: true
 
-  /@yutengjing/release@0.0.1:
-    resolution: {integrity: sha512-8FVWSL7dKGbRgtlETmUfvm0e3rBlhRnNt7MVl5zBig93EBp3syIa8hXUuHR9J8BlGKahe0W9nm7FJutSDU60zQ==}
+  /@yutengjing/release@0.0.2:
+    resolution: {integrity: sha512-Rbjo6EqtCSuAeVsNtXUs/nCCZnD4mjBpXXh2w8nBCRDHbxMwQlzbzlja3UCSJoAPRO3f6Llr7IiJmVXlNcW6FQ==}
     engines: {node: '>=16.14.0'}
     hasBin: true
     dependencies:
       '@clack/prompts': 0.6.3
+      boxen: 5.1.2
       bumpp: 9.1.1
       changelogen: 0.5.3
       execa: 5.1.1
@@ -552,7 +553,6 @@ packages:
     resolution: {integrity: sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w==}
     dependencies:
       string-width: 4.2.3
-    dev: false
 
   /ansi-escapes@4.3.2:
     resolution: {integrity: sha512-gKXj5ALrKWQLsYG9jlTRmR/xKluxHV+Z9QEwNIgCfM1/uwPMCuzVVnh5mwTd+OuBZcwSIMbqssNWRm1lE51QaQ==}
@@ -681,7 +681,6 @@ packages:
       type-fest: 0.20.2
       widest-line: 3.1.0
       wrap-ansi: 7.0.0
-    dev: false
 
   /bplist-parser@0.2.0:
     resolution: {integrity: sha512-z0M+byMThzQmD9NILRniCUXYsYpjwnlO8N5uCFaCqIOpqRsJCrQL9NK3JsD67CN5a08nF5oIL2bD6loTdHOuKw==}
@@ -796,7 +795,6 @@ packages:
   /camelcase@6.3.0:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
-    dev: false
 
   /chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -896,7 +894,6 @@ packages:
   /cli-boxes@2.2.1:
     resolution: {integrity: sha512-y4coMcylgSCdVinjiDBuR8PCC2bLjyGTwEmPb9NHR/QaNU6EUOXcTY/s6VjGMD6ENSEaeQYHCY0GNGS5jfMwPw==}
     engines: {node: '>=6'}
-    dev: false
 
   /cli-cursor@3.1.0:
     resolution: {integrity: sha512-I/zHAwsKf9FqGoXM4WWRACob9+SNukZTd94DWF57E4toouRulbCxcUh6RKUEOQlYTHJnzkPMySvPNaaSLNfLZw==}
@@ -3455,7 +3452,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       string-width: 4.2.3
-    dev: false
 
   /wrap-ansi@6.2.0:
     resolution: {integrity: sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==}

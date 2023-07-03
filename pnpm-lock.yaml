@@ -26,8 +26,8 @@ dependencies:
 
 devDependencies:
   '@types/node':
-    specifier: ^20.3.3
-    version: 20.3.3
+    specifier: ^18.16.19
+    version: 18.16.19
   '@yutengjing/eslint-config-typescript':
     specifier: ^0.4.2
     version: 0.4.2(eslint@8.44.0)(typescript@5.1.6)
@@ -35,11 +35,11 @@ devDependencies:
     specifier: ^0.0.1
     version: 0.0.1(prettier@2.8.8)
   '@yutengjing/release':
-    specifier: ^0.0.2
-    version: 0.0.2
+    specifier: ^0.0.4
+    version: 0.0.4
   '@yutengjing/tsconfig-node':
     specifier: ^0.0.2
-    version: 0.0.2(@types/node@20.3.3)
+    version: 0.0.2(@types/node@18.16.19)
   eslint:
     specifier: ^8.44.0
     version: 8.44.0
@@ -262,8 +262,8 @@ packages:
       '@types/unist': 2.0.6
     dev: true
 
-  /@types/node@20.3.3:
-    resolution: {integrity: sha512-wheIYdr4NYML61AjC8MKj/2jrR/kDQri/CIpVoZwldwhnIrD/j9jIU5bJ8yBKuB2VhpFV7Ab6G2XkBjv9r9Zzw==}
+  /@types/node@18.16.19:
+    resolution: {integrity: sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==}
     dev: true
 
   /@types/normalize-package-data@2.4.1:
@@ -474,8 +474,8 @@ packages:
       prettier: 2.8.8
     dev: true
 
-  /@yutengjing/release@0.0.2:
-    resolution: {integrity: sha512-Rbjo6EqtCSuAeVsNtXUs/nCCZnD4mjBpXXh2w8nBCRDHbxMwQlzbzlja3UCSJoAPRO3f6Llr7IiJmVXlNcW6FQ==}
+  /@yutengjing/release@0.0.4:
+    resolution: {integrity: sha512-jOtssvxo0OEfTwh4sRB3YhezI41L2xFJPqpPeR7CU/1ATErfp5OPum0vg4vCwlVLwZ7IXjGDVtNqO6XNedVafg==}
     engines: {node: '>=16.14.0'}
     hasBin: true
     dependencies:
@@ -493,12 +493,12 @@ packages:
     resolution: {integrity: sha512-SKNZiEAYvr2TEgRhnWGUMZeTFqOAxulFcQQdH975S35fUfihlRErzbh2Rmi7qoShN2Wlw+PFrwOwNT5j6VdKXg==}
     dev: true
 
-  /@yutengjing/tsconfig-node@0.0.2(@types/node@20.3.3):
+  /@yutengjing/tsconfig-node@0.0.2(@types/node@18.16.19):
     resolution: {integrity: sha512-BDTYZVdz4sAb4FZsmAJUTWJMrpVXmvz1emVs4yqUPmE/9JEGwE6DnvtakHSKW4hXxHM5T8xIZItmhWto4jm2+g==}
     peerDependencies:
       '@types/node': ^18.16.18
     dependencies:
-      '@types/node': 20.3.3
+      '@types/node': 18.16.19
       '@yutengjing/tsconfig-base': 0.0.2
     dev: true
 

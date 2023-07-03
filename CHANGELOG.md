@@ -1,3 +1,15 @@
+## v0.0.5 (2023-07-03)
+
+[compare changes](https://github.com/tjx666/release/compare/v0.0.4...v0.0.5 '2023-07-03')
+
+### 🐞 Bug Fixes
+
+- Compare changes part should be bottom ([2186089](https://github.com/tjx666/release/commit/2186089))
+
+### ❤️ Contributors
+
+- Changfeng <changfeng@gaoding.com>
+
 ## v0.0.4 (2023-07-03)
 
 [compare changes](https://github.com/tjx666/release/compare/v0.0.3...v0.0.4 '2023-07-03')

@@ -40,8 +40,25 @@ async function generateChangelog(newVersion: string) {
     const commits = parseCommits(rawCommits, config).filter(
         (c) => config.types[c.type] && Object.keys(types).includes(c.type.toLowerCase()),
     );
-    const md = await generateMarkDown(commits, config);
-    return md.replaceAll('\n\n\n', '\n\n').replaceAll('  - ', '- ');
+
+    let md = await generateMarkDown(commits, config);
+    // remove extra empty lines
+    md = md.replaceAll('\n\n\n', '\n\n');
+
+    // remove extra list indent
+    md = md.replaceAll('  - ', '- ');
+
+    // move compare changes part to bottom position
+    const compareChanges = md
+        .split('\n')
+        .map((line) => line.trim())
+        .filter((line) => line !== '')
+        .find((line) => line.startsWith('[compare changes]('));
+    console.log(compareChanges);
+    md = md.replace(`${compareChanges}\n\n`, '');
+    md += `${compareChanges}\n\n`;
+
+    return md;
 }
 
 const changelogPath = resolve(process.cwd(), 'CHANGELOG.md');
@@ -87,6 +104,8 @@ async function getRepository() {
 }
 
 async function main() {
+    const dryRun = process.argv.includes('--dry');
+
     intro(c.cyan(c.bold('Release New Version')));
     const s = spinner();
 
@@ -100,11 +119,15 @@ async function main() {
 
     const commitMessage = `release: v${newVersion}`;
     s.start('git commit');
-    await gitCommit(commitMessage);
+    if (!dryRun) {
+        await gitCommit(commitMessage);
+    }
     s.stop('committed');
 
     s.start('git tag');
-    await gitTag(newVersion, commitMessage);
+    if (!dryRun) {
+        await gitTag(newVersion, commitMessage);
+    }
     s.stop('tagged');
 
     const shouldPush = await confirm({
@@ -112,7 +135,9 @@ async function main() {
     });
     if (shouldPush) {
         s.start('git push');
-        await gitPush();
+        if (!dryRun) {
+            await gitPush();
+        }
         s.stop('pushed to remote');
     }
 

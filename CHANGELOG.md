@@ -1,3 +1,15 @@
+## v0.0.8 (2023-07-03)
+
+### 🐞 Bug Fixes
+
+- Compare changes part should be bottom ([b8413e7](https://github.com/tjx666/release/commit/b8413e7))
+
+### ❤️ Contributors
+
+- Changfeng <changfeng@gaoding.com>
+
+[View changes on GitHub](https://github.com/tjx666/release/compare/v0.0.7...v0.0.8 '2023-07-03')
+
 ## v0.0.7 (2023-07-03)
 
 [compare changes](https://github.com/tjx666/release/compare/v0.0.6...v0.0.7 '2023-07-03')

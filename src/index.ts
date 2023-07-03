@@ -53,7 +53,8 @@ async function generateChangelog(newVersion: string) {
         .split('\n')
         .map((line) => line.trim())
         .filter((line) => line !== '')
-        .find((line) => line.startsWith('[compare changes]('));
+        .find((line) => line.startsWith('[compare changes]('))!
+        .replace('compare changes', 'View changes on GitHub');
     md = md.replace(`${compareChanges}\n\n`, '');
     md += `\n\n${compareChanges}`;
 

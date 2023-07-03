@@ -1,3 +1,19 @@
+## v0.0.7 (2023-07-03)
+
+[compare changes](https://github.com/tjx666/release/compare/v0.0.6...v0.0.7 '2023-07-03')
+
+### 🚀 Features
+
+- Align compare changes title with changelogithub ([d8715f4](https://github.com/tjx666/release/commit/d8715f4))
+
+### 🐞 Bug Fixes
+
+- Compare changes missing empty line before it ([7443e65](https://github.com/tjx666/release/commit/7443e65))
+
+### ❤️ Contributors
+
+- Changfeng <changfeng@gaoding.com>
+
 ## v0.0.6 (2023-07-03)
 
 ### 🐞 Bug Fixes

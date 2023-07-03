@@ -66,7 +66,7 @@
         "@types/node": "^18.16.19",
         "@yutengjing/eslint-config-typescript": "^0.4.2",
         "@yutengjing/prettier-config": "^0.0.1",
-        "@yutengjing/release": "^0.0.4",
+        "@yutengjing/release": "^0.0.5",
         "@yutengjing/tsconfig-node": "^0.0.2",
         "eslint": "^8.44.0",
         "lint-staged": "^13.2.3",

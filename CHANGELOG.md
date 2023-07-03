@@ -1,3 +1,13 @@
+## v0.0.6 (2023-07-03)
+
+### 🐞 Bug Fixes
+
+- Remove useless log ([0d4332f](https://github.com/tjx666/release/commit/0d4332f))
+
+### ❤️ Contributors
+
+- Changfeng <changfeng@gaoding.com>[compare changes](https://github.com/tjx666/release/compare/v0.0.5...v0.0.6 '2023-07-03')
+
 ## v0.0.5 (2023-07-03)
 
 [compare changes](https://github.com/tjx666/release/compare/v0.0.4...v0.0.5 '2023-07-03')

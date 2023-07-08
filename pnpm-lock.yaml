@@ -15,8 +15,8 @@ dependencies:
     specifier: ^9.1.1
     version: 9.1.1
   changelogen:
-    specifier: ^0.5.3
-    version: 0.5.3
+    specifier: 0.5.4
+    version: 0.5.4
   execa:
     specifier: ^5.1.1
     version: 5.1.1
@@ -33,10 +33,10 @@ devDependencies:
     version: 0.4.2(eslint@8.44.0)(typescript@5.1.6)
   '@yutengjing/prettier-config':
     specifier: ^0.0.1
-    version: 0.0.1(prettier@2.8.8)
+    version: 0.0.1(prettier@3.0.0)
   '@yutengjing/tsconfig-node':
-    specifier: ^0.0.2
-    version: 0.0.2(@types/node@18.16.19)
+    specifier: ^0.0.3
+    version: 0.0.3(@types/node@18.16.19)
   eslint:
     specifier: ^8.44.0
     version: 8.44.0
@@ -44,8 +44,8 @@ devDependencies:
     specifier: ^13.2.3
     version: 13.2.3
   prettier:
-    specifier: ^2.8.8
-    version: 2.8.8
+    specifier: ^3.0.0
+    version: 3.0.0
   simple-git-hooks:
     specifier: ^2.8.1
     version: 2.8.1
@@ -229,7 +229,7 @@ packages:
     resolution: {integrity: sha512-UWRmygBsyj4bVXvDiqSccwT1kmsorcwQwaIy30yVh8T+Gspx4OlC0shX1y+ZuwXZvgnafmpRYKks0bAu9urJew==}
     dependencies:
       '@xml-tools/parser': 1.0.11
-      prettier: 2.8.8
+      prettier: 3.0.0
     dev: true
 
   /@sindresorhus/is@5.4.1:
@@ -464,27 +464,27 @@ packages:
       - supports-color
     dev: true
 
-  /@yutengjing/prettier-config@0.0.1(prettier@2.8.8):
+  /@yutengjing/prettier-config@0.0.1(prettier@3.0.0):
     resolution: {integrity: sha512-L0Zgc9/SsRt10pDY+tv8q3qiT6cmzbWa8wgNm3ftiTyKpTwP/HhJ22h9/A1/6W7PsqkmftqyHLoXYieOlFDprw==}
     requiresBuild: true
     peerDependencies:
       prettier: ^2.7.1
     dependencies:
       '@prettier/plugin-xml': 2.2.0
-      prettier: 2.8.8
+      prettier: 3.0.0
     dev: true
 
-  /@yutengjing/tsconfig-base@0.0.2:
-    resolution: {integrity: sha512-SKNZiEAYvr2TEgRhnWGUMZeTFqOAxulFcQQdH975S35fUfihlRErzbh2Rmi7qoShN2Wlw+PFrwOwNT5j6VdKXg==}
+  /@yutengjing/tsconfig-base@0.0.3:
+    resolution: {integrity: sha512-A44vJPGmjx2AtSCwqeM5379ScGJGeQLwCVFyE3xWyUF3PPYVKVdpaZiryiHW4eoZ8pYNsEQL9KGQ2YJe/9eeKg==}
     dev: true
 
-  /@yutengjing/tsconfig-node@0.0.2(@types/node@18.16.19):
-    resolution: {integrity: sha512-BDTYZVdz4sAb4FZsmAJUTWJMrpVXmvz1emVs4yqUPmE/9JEGwE6DnvtakHSKW4hXxHM5T8xIZItmhWto4jm2+g==}
+  /@yutengjing/tsconfig-node@0.0.3(@types/node@18.16.19):
+    resolution: {integrity: sha512-OiCL8jkd/ORRktmxeOnm6/ra2BrwA5okbZ0FU3aeXst9xMykRDjDY+pa9iHAUT29pttsVGxBjjo3SlODaXKQNA==}
     peerDependencies:
-      '@types/node': ^18.16.18
+      '@types/node': ^18.16.19
     dependencies:
       '@types/node': 18.16.19
-      '@yutengjing/tsconfig-base': 0.0.2
+      '@yutengjing/tsconfig-base': 0.0.3
     dev: true
 
   /acorn-jsx@5.3.2(acorn@8.9.0):
@@ -812,8 +812,8 @@ packages:
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
     dev: true
 
-  /changelogen@0.5.3:
-    resolution: {integrity: sha512-RjTrgJlTHhbGlMo/s73j7uSTspla3ykr0UA5zwRs/HIZvElY6qZHu3X70httgC2Du5poS2wFCS10WLfwZr7ZTQ==}
+  /changelogen@0.5.4:
+    resolution: {integrity: sha512-ady7TjLW3ZKMWzVF8MG3vJRqLVctNTGIZnO5XoFbMbcC59BVNTZXNXL8tovB+OK6DHLk4NeTHUWzdwMaKmFyUA==}
     hasBin: true
     dependencies:
       c12: 1.4.2
@@ -829,6 +829,7 @@ packages:
       pkg-types: 1.0.3
       scule: 1.0.0
       semver: 7.5.3
+      std-env: 3.3.3
       yaml: 2.3.1
     transitivePeerDependencies:
       - supports-color
@@ -2835,9 +2836,9 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier@2.8.8:
-    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
-    engines: {node: '>=10.13.0'}
+  /prettier@3.0.0:
+    resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
@@ -3169,6 +3170,10 @@ packages:
   /spdx-license-ids@3.0.13:
     resolution: {integrity: sha512-XkD+zwiqXHikFZm4AX/7JSCXA98U5Db4AFd5XUg/+9UNtnH75+Z9KxtpYiJZx36mUDVOwH83pl7yvCer6ewM3w==}
     dev: true
+
+  /std-env@3.3.3:
+    resolution: {integrity: sha512-Rz6yejtVyWnVjC1RFvNmYL10kgjC49EOghxWn0RFqlCHGFpQx+Xe7yW3I4ceK1SGrWIGMjD5Kbue8W/udkbMJg==}
+    dev: false
 
   /string-argv@0.3.2:
     resolution: {integrity: sha512-aqD2Q0144Z+/RqG52NeHEkZauTAUWJO8c6yTftGJKO3Tja5tUgIfmIl6kExvhtxSDP7fXB6DvzkfMpCd/F3G+Q==}

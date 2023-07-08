@@ -42,11 +42,6 @@ async function generateChangelog(newVersion: string) {
     );
 
     let md = await generateMarkDown(commits, config);
-    // remove extra empty lines
-    md = md.replaceAll('\n\n\n', '\n\n');
-
-    // remove extra list indent
-    md = md.replaceAll('  - ', '- ');
 
     // move compare changes part to bottom position
     const compareChanges = md

@@ -1,3 +1,15 @@
+## v0.0.10 (2023-07-09)
+
+### 🐞 Bug Fixes
+
+- No 'compare changes' when first release ([6a42b06](https://github.com/tjx666/release/commit/6a42b06))
+
+### ❤️ Contributors
+
+- YuTengjing ([@tjx666](http://github.com/tjx666))
+
+[View changes on GitHub](https://github.com/tjx666/release/compare/v0.0.9...v0.0.10 '2023-07-09')
+
 ## v0.0.9 (2023-07-09)
 
 ### 🏎 Performance

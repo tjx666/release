@@ -1,3 +1,15 @@
+## v0.0.9 (2023-07-09)
+
+### 🏎 Performance
+
+- Skip need not changelog process after upgrade changelogen ([5116942](https://github.com/tjx666/release/commit/5116942))
+
+### ❤️ Contributors
+
+- YuTengjing ([@tjx666](http://github.com/tjx666))
+
+[View changes on GitHub](https://github.com/tjx666/release/compare/v0.0.8...v0.0.9 '2023-07-09')
+
 ## v0.0.8 (2023-07-03)
 
 ### 🐞 Bug Fixes

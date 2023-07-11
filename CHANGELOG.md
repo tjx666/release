@@ -1,3 +1,19 @@
+## v0.1.0 (2023-07-12)
+
+### 🚀 Features
+
+- Add 'No significant changes' when no valid commits ([c6cfeb4](https://github.com/tjx666/release/commit/c6cfeb4))
+
+### 🐞 Bug Fixes
+
+- When no changes will not replace `compare changes` ([0b84667](https://github.com/tjx666/release/commit/0b84667))
+
+### ❤️ Contributors
+
+- YuTengjing ([@tjx666](http://github.com/tjx666))
+
+[View changes on GitHub](https://github.com/tjx666/release/compare/v0.0.10...v0.1.0 '2023-07-12')
+
 ## v0.0.10 (2023-07-09)
 
 ### 🐞 Bug Fixes

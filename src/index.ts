@@ -49,6 +49,10 @@ async function generateChangelog(newVersion: string) {
         .map((line) => line.trim())
         .filter((line) => line !== '')
         .find((line) => line.startsWith('[compare changes]('));
+    if (commits.length === 0) {
+        md += '\n\nNo significant changes';
+    }
+
     if (compareChanges) {
         md = md.replace(compareChanges, '');
         md += `\n\n${compareChanges.replace('compare changes', 'View changes on GitHub')}`;

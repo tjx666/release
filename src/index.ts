@@ -50,9 +50,12 @@ async function generateChangelog(newVersion: string) {
         .filter((line) => line !== '')
         .find((line) => line.startsWith('[compare changes]('));
     if (compareChanges) {
-        md = md.replace(`${compareChanges}\n\n`, '');
+        md = md.replace(compareChanges, '');
         md += `\n\n${compareChanges.replace('compare changes', 'View changes on GitHub')}`;
     }
+
+    // remove extra empty lines
+    md = md.replace(/\n{3,}/, '\n\n');
 
     return md;
 }

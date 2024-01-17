@@ -63,14 +63,14 @@
         "picocolors": "^1.0.0"
     },
     "devDependencies": {
-        "@types/node": "^18.16.19",
-        "@yutengjing/eslint-config-typescript": "^0.4.2",
-        "@yutengjing/prettier-config": "^0.0.1",
-        "@yutengjing/tsconfig-node": "^0.0.3",
-        "eslint": "^8.44.0",
-        "lint-staged": "^13.2.3",
-        "prettier": "^3.0.0",
-        "simple-git-hooks": "^2.8.1",
-        "typescript": "^5.1.6"
+        "@types/node": "^20.11.4",
+        "@yutengjing/eslint-config-typescript": "^0.5.2",
+        "@yutengjing/prettier-config": "^1.0.0",
+        "@yutengjing/tsconfig-node-commonjs": "^0.0.5",
+        "eslint": "^8.56.0",
+        "lint-staged": "^15.2.0",
+        "prettier": "^3.2.2",
+        "simple-git-hooks": "^2.9.0",
+        "typescript": "^5.3.3"
     }
 }

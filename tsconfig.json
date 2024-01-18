@@ -1,5 +1,5 @@
 {
-    "extends": "@yutengjing/tsconfig-node-commonjs",
+    "extends": "@yutengjing/tsconfig-node",
     "include": ["src/*.ts"],
     "compilerOptions": {
         "noEmit": false,

@@ -20,13 +20,13 @@
         "url": "git+https://github.com/tjx666/release.git"
     },
     "author": "YuTengjing <ytj2713151713@gmail.com>",
+    "type": "module",
+    "bin": "./dist/index.mjs",
     "files": [
         "dist"
     ],
-    "module": "commonjs",
-    "bin": "./dist/index.js",
     "engines": {
-        "node": ">=16.14.0"
+        "node": ">=20.11.0"
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org/",
@@ -48,29 +48,30 @@
     "scripts": {
         "prepublishOnly": "pnpm run build",
         "clean": "rm -rf ./dist",
-        "build": "pnpm clean && tsc -p .",
+        "build": "unbuild --minify",
         "type-check": "tsc --noEmit",
         "lint": "eslint .",
         "test": "pnpm lint && pnpm type-check",
         "release": "pnpm test && node ./dist/index.js && pnpm publish"
     },
     "dependencies": {
-        "@clack/prompts": "^0.6.3",
-        "boxen": "5.1.2",
-        "bumpp": "^9.1.1",
-        "changelogen": "0.5.4",
-        "execa": "^5.1.1",
+        "@clack/prompts": "^0.7.0",
+        "boxen": "7.1.1",
+        "bumpp": "^9.3.0",
+        "changelogen": "0.5.5",
+        "execa": "^8.0.1",
         "picocolors": "^1.0.0"
     },
     "devDependencies": {
-        "@types/node": "^20.11.4",
+        "@types/node": "^20.11.5",
         "@yutengjing/eslint-config-typescript": "^0.5.2",
         "@yutengjing/prettier-config": "^1.0.0",
-        "@yutengjing/tsconfig-node-commonjs": "^0.0.5",
+        "@yutengjing/tsconfig-node": "^0.0.5",
         "eslint": "^8.56.0",
         "lint-staged": "^15.2.0",
-        "prettier": "^3.2.2",
+        "prettier": "^3.2.4",
         "simple-git-hooks": "^2.9.0",
-        "typescript": "^5.3.3"
+        "typescript": "^5.3.3",
+        "unbuild": "^2.0.0"
     }
 }

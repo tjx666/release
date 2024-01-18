@@ -1,3 +1,16 @@
+## v0.2.0 (2024-01-18)
+
+### 🚀 Features
+
+- Upgrade deps & move to esm ([bfa2210](https://github.com/tjx666/release/commit/bfa2210))
+- Upgrade nodejs requirement to node20 ([a431917](https://github.com/tjx666/release/commit/a431917))
+
+### ❤️ Contributors
+
+- YuTengjing ([@tjx666](http://github.com/tjx666))
+
+[View changes on GitHub](https://github.com/tjx666/release/compare/v0.1.0...v0.2.0 (2024-01-18))
+
 ## v0.1.0 (2023-07-12)
 
 ### 🚀 Features

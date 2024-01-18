@@ -26,7 +26,7 @@
         "dist"
     ],
     "engines": {
-        "node": ">=20.11.0"
+        "node": ">=20.0.0"
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org/",
@@ -52,7 +52,7 @@
         "type-check": "tsc --noEmit",
         "lint": "eslint .",
         "test": "pnpm lint && pnpm type-check",
-        "release": "pnpm test && node ./dist/index.js && pnpm publish"
+        "release": "pnpm test && node ./dist/index.mjs && pnpm publish"
     },
     "dependencies": {
         "@clack/prompts": "^0.7.0",

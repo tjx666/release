@@ -1,6 +1,6 @@
 {
     "name": "@yutengjing/release",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "A personal use release tool for generating changelog and bump.",
     "keywords": [
         "release",

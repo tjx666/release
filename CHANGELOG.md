@@ -1,3 +1,9 @@
+## v0.3.1 (2024-07-13)
+
+No significant changes
+
+[View changes on GitHub](https://github.com/tjx666/release/compare/v0.3.0...v0.3.1 '2024-07-13')
+
 ## v0.3.0 (2024-07-13)
 
 ### 🚀 Features

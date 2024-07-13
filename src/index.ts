@@ -9,7 +9,7 @@ import consola from 'consola';
 import c from 'picocolors';
 
 import { generateChangelog, updateChangelog } from './changelog';
-import { getBranchName, getRepositoryUrl, gitCommit, gitPush, gitTag } from './git';
+import { getBranchName, getRepositoryUrl, gitCommit, gitPull, gitPush, gitTag } from './git';
 
 async function main() {
     const dryRun = process.argv.includes('--dry');
@@ -68,6 +68,16 @@ async function main() {
         message: 'git push?',
     });
     if (shouldPush) {
+        await runStep(
+            'git pull',
+            async () => {
+                if (!dryRun) {
+                    await gitPull();
+                }
+            },
+            `pulled from remote to ${currentBranch}`,
+        );
+
         await runStep(
             'git push',
             async () => {

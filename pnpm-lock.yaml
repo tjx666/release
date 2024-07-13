@@ -20,6 +20,9 @@ importers:
       changelogen:
         specifier: 0.5.5
         version: 0.5.5
+      consola:
+        specifier: ^3.2.3
+        version: 3.2.3
       execa:
         specifier: ^9.3.0
         version: 9.3.0

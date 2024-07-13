@@ -5,6 +5,7 @@ import process from 'node:process';
 import { confirm, intro, outro, spinner } from '@clack/prompts';
 import boxen from 'boxen';
 import { versionBump } from 'bumpp';
+import consola from 'consola';
 import c from 'picocolors';
 
 import { generateChangelog, updateChangelog } from './changelog';
@@ -16,36 +17,58 @@ async function main() {
     intro(c.cyan(c.bold('Release New Version')));
     const s = spinner();
 
+    const runStep = async (startMsg: string, step: () => Promise<void>, completeMsg?: string) => {
+        s.start(startMsg);
+        await step();
+        s.stop(completeMsg ?? startMsg);
+    };
+
     // https://github.com/antfu/bumpp/blob/main/src/version-bump.ts
     const { newVersion } = await versionBump({ files: [] });
 
-    s.start('update changelog');
-    const changelog = await generateChangelog(newVersion);
-    await updateChangelog(changelog);
-    s.stop('changelog updated');
+    await runStep(
+        'update changelog',
+        async () => {
+            const changelog = await generateChangelog(newVersion);
+            await updateChangelog(changelog);
+        },
+        'changelog updated',
+    );
 
     const commitMessage = `release: v${newVersion}`;
-    s.start('git commit');
-    if (!dryRun) {
-        await gitCommit(commitMessage);
-    }
-    s.stop('committed');
+    await runStep(
+        'git commit',
+        async () => {
+            if (!dryRun) {
+                await gitCommit(commitMessage);
+            }
+        },
+        'committed',
+    );
 
-    s.start('git tag');
-    if (!dryRun) {
-        await gitTag(newVersion, commitMessage);
-    }
-    s.stop('tagged');
+    await runStep(
+        'git tag',
+        async () => {
+            if (!dryRun) {
+                await gitTag(newVersion, commitMessage);
+            }
+        },
+        'tagged',
+    );
 
     const shouldPush = await confirm({
         message: 'git push?',
     });
     if (shouldPush) {
-        s.start('git push');
-        if (!dryRun) {
-            await gitPush();
-        }
-        s.stop('pushed to remote');
+        await runStep(
+            'git push',
+            async () => {
+                if (!dryRun) {
+                    await gitPush();
+                }
+            },
+            'pushed to remote',
+        );
     }
 
     outro(`release ${c.green(`v${newVersion}`)} success!`);
@@ -56,7 +79,7 @@ async function main() {
         const actionsUrl = c.green(`${repository}/actions`);
         const more = `${c.magenta('Release:')} ${releaseUrl}
 ${c.magenta('Actions:')} ${actionsUrl}`;
-        console.log(
+        consola.log(
             boxen(more, {
                 padding: 1,
                 margin: 1,
@@ -67,4 +90,7 @@ ${c.magenta('Actions:')} ${actionsUrl}`;
     }
 }
 
-main();
+main().catch((error) => {
+    consola.error(error);
+    process.exit(1);
+});

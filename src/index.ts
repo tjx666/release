@@ -9,13 +9,21 @@ import consola from 'consola';
 import c from 'picocolors';
 
 import { generateChangelog, updateChangelog } from './changelog';
-import { getRepositoryUrl, gitCommit, gitPush, gitTag } from './git';
+import { getBranchName, getRepositoryUrl, gitCommit, gitPush, gitTag } from './git';
 
 async function main() {
     const dryRun = process.argv.includes('--dry');
 
     intro(c.cyan(c.bold('Release New Version')));
     const s = spinner();
+
+    const currentBranch = await getBranchName();
+    const validBranches = new Set(['main', 'master']);
+    if (!validBranches.has(currentBranch)) {
+        throw new Error(
+            `please switch to branch ${Array.from(validBranches).join(' or ')} first! current branch: ${currentBranch}`,
+        );
+    }
 
     const runStep = async (startMsg: string, step: () => Promise<void>, completeMsg?: string) => {
         s.start(startMsg);

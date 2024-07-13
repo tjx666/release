@@ -1,3 +1,18 @@
+## v0.3.0 (2024-07-13)
+
+### 🚀 Features
+
+- Upgrade deps ([14ab344](https://github.com/tjx666/release/commit/14ab344))
+- Output error ([e85654d](https://github.com/tjx666/release/commit/e85654d))
+- Check branch before release ([3af684a](https://github.com/tjx666/release/commit/3af684a))
+- Pull before push ([56c5fb0](https://github.com/tjx666/release/commit/56c5fb0))
+
+### ❤️ Contributors
+
+- 余腾靖 ([@tjx666](http://github.com/tjx666))
+
+[View changes on GitHub](https://github.com/tjx666/release/compare/v0.2.0...v0.3.0 '2024-07-13')
+
 ## v0.2.0 (2024-01-18)
 
 ### 🚀 Features
@@ -9,7 +24,7 @@
 
 - YuTengjing ([@tjx666](http://github.com/tjx666))
 
-[View changes on GitHub](https://github.com/tjx666/release/compare/v0.1.0...v0.2.0 (2024-01-18))
+[View changes on GitHub](https://github.com/tjx666/release/compare/v0.1.0...v0.2.0 '2024-01-18')
 
 ## v0.1.0 (2023-07-12)
 

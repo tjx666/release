@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 
+import process from 'node:process';
+
 import { confirm, intro, outro, spinner } from '@clack/prompts';
 import boxen from 'boxen';
 import { versionBump } from 'bumpp';
 import c from 'picocolors';
 
 import { generateChangelog, updateChangelog } from './changelog';
-import { gitCommit, gitTag, gitPush, getRepositoryUrl } from './git';
+import { getRepositoryUrl, gitCommit, gitPush, gitTag } from './git';
 
 async function main() {
     const dryRun = process.argv.includes('--dry');
